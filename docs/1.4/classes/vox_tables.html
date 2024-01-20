@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+	<title>Voxel Help API: vox_tables</title>
+	<link rel="stylesheet" href="../../../files/highlight/styles/atom-one-dark.css"/>
+	<link rel="stylesheet" href="../../../files/style.css" />
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="shortcut icon" href="../../../files/icon.png"
+	 type="image/x-icon" />
+	<link rel="icon" href="../../../files/icon.png"
+	type="image/x-icon" />
+</head>
+
+<body>
+
+    <h1 class="title">Статичный класс vox_tables</h1>
+    <br>
+    <h1 class="text">Класс, содержащий утилиты для работы с таблицами</h1>
+    <br>
+    <br>
+    <h1 class="title">Функции</h1>
+
+    <br>
+    <br>
+    <h1 class="functiontitle">add</h1>
+    <br>
+    <h1 class="text">Добавляет значение к таблице</h1>
+    <br>
+    <h1 class="text">Параметры</h1>
+    <br>
+    <h1 class="text">tableVal - Экземпляр таблицы</h1>
+    <h1 class="text">value - Значение</h1>
+    <br>
+    <h1 class=text>Пример использования:</h1>
+    <h1>
+        <pre>
+           <code class="lua" >
+myTable = { }
+vox_tables:add(myTable, "Perfect String")
+print(myTable[0])
+
+-- Вывод:
+-- Perfect String
+           </code>
+        </pre>
+    </h1>
+
+    <br>
+    <br>
+    <h1 class="functiontitle">insert</h1>
+    <br>
+    <h1 class="text">Заменяет значение в таблице на указанной позиции</h1>
+    <br>
+    <h1 class="text">Параметры</h1>
+    <br>
+    <h1 class="text">tableVal - Экземпляр таблицы</h1>
+    <h1 class="text">index - Позиция</h1>
+    <h1 class="text">newValue - Новое значение</h1>
+    <br>
+    <h1 class=text>Пример использования:</h1>
+    <h1>
+        <pre>
+           <code class="lua" >
+myTable = { }
+vox_tables:insert(myTable, 6, "Perfect String")
+print(myTable[6])
+
+-- Вывод:
+-- Perfect String
+           </code>
+        </pre>
+    </h1>
+
+
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <a href="../api.html" class="button">Назад</a>
+   <script src = "../../../files/highlight/highlight.js" />
+   <script src="../../../files/highlight/languages/lua.js"></script>
+   <script>hljs.highlightAll();</script>
+</body>
+
+   
+</html>

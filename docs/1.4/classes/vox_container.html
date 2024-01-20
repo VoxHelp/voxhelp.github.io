@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+	<title>Voxel Help API: vox_container</title>
+	<link rel="stylesheet" href="../../../files/highlight/styles/atom-one-dark.css"/>
+	<link rel="stylesheet" href="../../../files/style.css" />
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="shortcut icon" href="../../../files/icon.png"
+	 type="image/x-icon" />
+	<link rel="icon" href="../../../files/icon.png"
+	type="image/x-icon" />
+</head>
+
+<body>
+
+    <h1 class="title">Класс vox_container</h1>
+    <br>
+    <h1 class="text">Класс, который позволяет хранить и получать какое то значение</h1>
+    <br>
+    <br>
+    <h1 class="title">Функции</h1>
+
+    <br>
+    <br>
+    <h1 class="functiontitle">new</h1>
+    <br>
+    <h1 class="text">Создаёт экземпляр vox_container</h1>
+    <br>
+    <h1 class="text">Параметры</h1>
+    <br>
+    <h1 class="text">object - Обьект, который содержит контейнер</h1>
+    <br>
+    <h1 class=text>Пример использования:</h1>
+    <h1>
+        <pre>
+           <code class="lua" >
+container = vox_container:new("Perfect String")
+
+print(container:get())
+
+-- Вывод:
+-- Perfect String
+           </code>
+        </pre>
+    </h1>
+
+
+    <br>
+    <br>
+    <h1 class="functiontitle">get</h1>
+    <br>
+    <h1 class="text">Возвращает обьект, который содержит контейнер</h1>
+    <br>
+    <h1 class=text>Пример использования:</h1>
+    <h1>
+        <pre>
+           <code class="lua" >
+container = vox_container:new("Perfect String")
+
+print(container:get())
+
+-- Вывод:
+-- Perfect String
+           </code>
+        </pre>
+    </h1>
+
+
+    <br>
+    <br>
+    <h1 class="functiontitle">set</h1>
+    <br>
+    <h1 class="text">Изменяет содержимое контейнера</h1>
+    <br>
+    <h1 class="text">Параметры</h1>
+    <br>
+    <h1 class="text">object - Обьект, который будет содержать контейнер</h1>
+    <br>
+    <h1 class=text>Пример использования:</h1>
+    <h1>
+        <pre>
+           <code class="lua" >
+container = vox_container:new("Perfect String")
+
+print(container:get())
+
+container:set("Beautiful String")
+
+print(container:get())
+
+-- Вывод:
+-- Perfect String
+-- Beautiful String
+           </code>
+        </pre>
+    </h1>
+
+
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <a href="../api.html" class="button">Назад</a>
+   <script src = "../../../files/highlight/highlight.js" />
+   <script src="../../../files/highlight/languages/lua.js"></script>
+   <script>hljs.highlightAll();</script>
+</body>
+
+   
+</html>
