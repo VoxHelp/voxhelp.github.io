@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+	<title>Voxel Help API: vox_arrays</title>
+	<link rel="stylesheet" href="../../../files/highlight/styles/atom-one-dark.css"/>
+	<link rel="stylesheet" href="../../../files/style.css" />
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="shortcut icon" href="../../../files/icon.png"
+	 type="image/x-icon" />
+	<link rel="icon" href="../../../files/icon.png"
+	type="image/x-icon" />
+</head>
+
+<body>
+
+    <h1 class="title">Библиотека vox_arrays</h1>
+    <br>
+    <h1 class="text">Класс, содержащий утилиты для работы с массивами</h1>
+    <br>
+    <br>
+    <h1 class="title">Функции</h1>
+
+    <br>
+    <br>
+    <h1 class="functiontitle">createArrayFromElement</h1>
+    <br>
+    <h1 class="text">Создаёт массив из одного элемента</h1>
+    <br>
+    <h1 class="text">Параметры</h1>
+    <br>
+    <h1 class="text">element - Элемент из которого будет создан массив</h1>
+    <br>
+    <h1 class=text>Пример использования:</h1>
+    <h1>
+        <pre>
+           <code class="lua" >
+array = vox_arrays.createArrayFromElement("Perfect String")
+
+print(#array)
+print(array[0])
+
+-- Вывод:
+-- 1
+-- Perfect String
+           </code>
+        </pre>
+    </h1>
+
+
+    <br>
+    <br>
+    <h1 class="functiontitle">array_contains</h1>
+    <br>
+    <h1 class="text">Возвращает true если массив содержит указанный элемент</h1>
+    <br>
+    <h1 class="text">Параметры</h1>
+    <br>
+    <h1 class="text">array - Массив</h1>
+    <h1 class="text">element - Элемент, который необходимо найти</h1>
+    <br>
+    <h1 class=text>Пример использования:</h1>
+    <h1>
+        <pre>
+           <code class="lua" >
+array = { "Perfect String" }
+
+print(vox_arrays.contains(array, "Perfect String"))
+
+-- Вывод:
+-- true
+           </code>
+        </pre>
+    </h1>
+
+
+    <br>
+    <br>
+    <h1 class="functiontitle">toList</h1>
+    <br>
+    <h1 class="text">Конвертирует массив в список и возвращает экземпляр vox_list</h1>
+    <br>
+    <h1 class="text">Параметры</h1>
+    <br>
+    <h1 class="text">array - Массив</h1>
+    <br>
+    <h1 class=text>Пример использования:</h1>
+    <h1>
+        <pre>
+           <code class="lua" >
+array = { "Perfect String", "Beautiful String" }
+
+list = vox_arrays.toList(array)
+
+print(list:size())
+print(list:get(0))
+print(list:get(1))
+
+-- Вывод:
+-- 2
+-- Perfect String
+-- Beautiful String
+           </code>
+        </pre>
+    </h1>
+
+
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <a href="../api.html" class="button">Назад</a>
+   <script src = "../../../files/highlight/highlight.js" />
+   <script src="../../../files/highlight/languages/lua.js"></script>
+   <script>hljs.highlightAll();</script>
+</body>
+
+   
+</html>

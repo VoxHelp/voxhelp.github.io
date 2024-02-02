@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+	<title>Voxel Help API: vox_meta</title>
+	<link rel="stylesheet" href="../../../files/highlight/styles/atom-one-dark.css"/>
+	<link rel="stylesheet" href="../../../files/style.css" />
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="shortcut icon" href="../../../files/icon.png"
+	 type="image/x-icon" />
+	<link rel="icon" href="../../../files/icon.png"
+	type="image/x-icon" />
+</head>
+
+<body>
+    <h1 class="title">Класс vox_meta</h1>
+    <br>
+    <h1 class="text">Класс позволяющий хранить данные по координатам</h1>
+    <br>
+    <h1 class="text">Примечание: Можно использовать глобальный экземпляр просто обращаясь к vox_meta</h1>
+    <br>
+    <br>
+    <h1 class="title">Функции</h1>
+
+    <br>
+    <br>
+    <h1 class="functiontitle">new</h1>
+    <br>
+    <h1 class="text">Создаёт экземпляр vox_meta</h1>
+    <br>
+    <h1 class="text">Параметры</h1>
+    <br>
+    <h1 class="text">varsTable - Таблица, которую будет использовать экземпляр меты. Если ничего не передать, то создастся новая таблица</h1>
+    <br>
+    <h1 class=text>Пример использования:</h1>
+    <h1>
+        <pre>
+           <code class="lua" >
+varsTable = { x = { y = { z = { isChecked = false } } } }
+meta = vox_meta:new(varsTable)
+emptyMeta = vox_meta:new()
+           </code>
+        </pre>
+    </h1>
+
+    <br>
+    <br>
+    <h1 class="functiontitle">setVar</h1>
+    <br>
+    <h1 class="text">Устанавливает значение указанной переменной по координатам x, y, z </h1>
+    <br>
+    <h1 class="text">Параметры</h1>
+    <br>
+    <h1 class="text">x - Координата X</h1>
+    <h1 class="text">y - Координата Y</h1>
+    <h1 class="text">z - Координата Z</h1>
+    <h1 class="text">varName - Название переменной</h1>
+    <h1 class="text">value - Значение</h1>
+    <br>
+    <h1 class=text>Пример использования:</h1>
+    <h1>
+        <pre>
+           <code class="lua" >
+meta = vox_meta:new()
+
+meta:setVar(0, 0, 0, "isChecked", false)
+           </code>
+        </pre>
+    </h1>
+
+    <br>
+    <br>
+    <h1 class="functiontitle">getVar</h1>
+    <br>
+    <h1 class="text">Возвращает значение указанной переменной по координатам x, y, z. Если переменная не установелна, возвращает nil</h1>
+    <br>
+    <h1 class="text">Параметры</h1>
+    <br>
+    <h1 class="text">x - Координата X</h1>
+    <h1 class="text">y - Координата Y</h1>
+    <h1 class="text">z - Координата Z</h1>
+    <h1 class="text">varName - Название переменной</h1>
+    <br>
+    <h1 class=text>Пример использования:</h1>
+    <h1>
+        <pre>
+           <code class="lua" >
+meta = vox_meta:new()
+
+meta:setVar(0, 0, 0, "isChecked", false)
+
+print(meta:getVar(0, 0, 0, "isChecked"))
+
+-- Вывод:
+-- false
+           </code>
+        </pre>
+    </h1>
+
+
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <a href="../api.html" class="button">Назад</a>
+   <script src = "../../../files/highlight/highlight.js" />
+   <script src="../../../files/highlight/languages/lua.js"></script>
+   <script>hljs.highlightAll();</script>
+</body>
+
+   
+</html>

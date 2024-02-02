@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+	<title>Voxel Help API: vox_delegate</title>
+	<link rel="stylesheet" href="../../../files/highlight/styles/atom-one-dark.css"/>
+	<link rel="stylesheet" href="../../../files/style.css" />
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="shortcut icon" href="../../../files/icon.png"
+	 type="image/x-icon" />
+	<link rel="icon" href="../../../files/icon.png"
+	type="image/x-icon" />
+</head>
+
+<body>
+
+    <h1 class="title">Класс vox_delegate</h1>
+    <br>
+    <h1 class="text">Класс, который позволяет хранить функцию и транспортировать её как делегат</h1>
+    <br>
+    <br>
+    <h1 class="title">Функции</h1>
+
+    <br>
+    <br>
+    <h1 class="functiontitle">new</h1>
+    <br>
+    <h1 class="text">Создаёт экземпляр vox_delegate</h1>
+    <br>
+    <h1 class="text">Параметры</h1>
+    <br>
+    <h1 class="text">entry - Таблица, в которой ref это функция</h1>
+    <br>
+    <h1 class=text>Пример использования:</h1>
+    <h1>
+        <pre>
+           <code class="lua" >
+function printString(str)
+    print(str)
+end
+
+delegate = vox_delegate:new({ ref = printString })
+
+delegate:invoke("Perfect String")
+
+-- Вывод:
+-- Perfect String
+           </code>
+        </pre>
+    </h1>
+
+
+    <br>
+    <br>
+    <h1 class="functiontitle">invoke</h1>
+    <br>
+    <h1 class="text">Вызывает функцию делегата</h1>
+    <br>
+    <h1 class="text">Параметры</h1>
+    <br>
+    <h1 class="text">params - Параметры, которые передадутся функции (неограниченное количество)</h1>
+    <br>
+    <h1 class=text>Пример использования:</h1>
+    <h1>
+        <pre>
+           <code class="lua" >
+function printString(str)
+    print(str)
+end
+
+delegate = vox_delegate:new({ ref = printString })
+
+delegate:invoke("Perfect String")
+
+-- Вывод:
+-- Perfect String
+           </code>
+        </pre>
+    </h1>
+
+
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <a href="../api.html" class="button">Назад</a>
+   <script src = "../../../files/highlight/highlight.js" />
+   <script src="../../../files/highlight/languages/lua.js"></script>
+   <script>hljs.highlightAll();</script>
+</body>
+
+   
+</html>

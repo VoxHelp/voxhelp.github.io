@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+	<title>Voxel Help API: vox_list</title>
+	<link rel="stylesheet" href="../../../files/highlight/styles/atom-one-dark.css"/>
+	<link rel="stylesheet" href="../../../files/style.css" />
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="shortcut icon" href="../../../files/icon.png"
+	 type="image/x-icon" />
+	<link rel="icon" href="../../../files/icon.png"
+	type="image/x-icon" />
+</head>
+
+<body>
+
+    <h1 class="title">Класс vox_list</h1>
+    <br>
+    <h1 class="text">Класс-реализация списка, может быть очень полезен</h1>
+    <br>
+    <br>
+    <h1 class="title">Функции</h1>
+
+    <br>
+    <br>
+    <h1 class="functiontitle">new</h1>
+    <br>
+    <h1 class="text">Создаёт экземпляр vox_list</h1>
+    <br>
+    <h1 class="text">Параметры</h1>
+    <br>
+    <h1 class="text">size - Размер списка. Если ничего не передать, то автоматически будет 0</h1>
+    <br>
+    <h1 class=text>Пример использования:</h1>
+    <h1>
+        <pre>
+           <code class="lua" >
+list = vox_list:new(6)
+print(list:size())
+list = vox_list:new()
+print(list:size())
+
+-- Вывод:
+-- 6
+-- 0
+           </code>
+        </pre>
+    </h1>
+
+
+    <br>
+    <br>
+    <h1 class="functiontitle">fromElement</h1>
+    <br>
+    <h1 class="text">Создаёт экземпляр vox_list с одним элементом</h1>
+    <br>
+    <h1 class="text">Параметры</h1>
+    <br>
+    <h1 class="text">element - Элемент, который добавится в список</h1>
+    <br>
+    <h1 class=text>Пример использования:</h1>
+    <h1>
+        <pre>
+           <code class="lua" >
+list = vox_list:fromElement("Perfect String")
+
+print(list:size())
+print(list:get(0))
+
+-- Вывод:
+-- 1
+-- Perfect String
+           </code>
+        </pre>
+    </h1>
+
+    <br>
+    <br>
+    <h1 class="functiontitle">toArray</h1>
+    <br>
+    <h1 class="text">Конвертирует список в массив</h1>
+    <br>
+    <h1 class=text>Пример использования:</h1>
+    <h1>
+        <pre>
+           <code class="lua" >
+list = vox_list:fromElement("Perfect String")
+
+array = list:toArray()
+
+print(#array)
+print(array[0])
+
+-- Вывод:
+-- 1
+-- Perfect String
+           </code>
+        </pre>
+    </h1>
+
+    <br>
+    <br>
+    <h1 class="functiontitle">print</h1>
+    <br>
+    <h1 class="text">Выводит данные списка в терминал</h1>
+    <br>
+    <h1 class=text>Пример использования:</h1>
+    <h1>
+        <pre>
+           <code class="lua" >
+list = vox_list:fromElement("Perfect String")
+
+list:print()
+
+-- Вывод:
+-- Size: 1
+-- Iterations: 0
+-- Perfect String
+           </code>
+        </pre>
+    </h1>
+
+    <br>
+    <br>
+    <h1 class="functiontitle">iterations</h1>
+    <br>
+    <h1 class="text">Возвращает число итераций для цикла for</h1>
+    <br>
+    <h1 class=text>Пример использования:</h1>
+    <h1>
+        <pre>
+           <code class="lua" >
+list = vox_list:new()
+
+list:add("Perfect String")
+list:add("Beautiful String")
+
+iterations = list:iterations()
+
+print(iterations)
+
+for i = 0, iterations do
+    print(list:get(i))
+end
+
+-- Вывод:
+-- 1
+-- Perfect String
+-- Beautiful String
+           </code>
+        </pre>
+    </h1>
+
+    <br>
+    <br>
+    <h1 class="functiontitle">size</h1>
+    <br>
+    <h1 class="text">Возвращает число элементов в списке</h1>
+    <br>
+    <h1 class=text>Пример использования:</h1>
+    <h1>
+        <pre>
+           <code class="lua" >
+list = vox_list:new()
+
+list:add("Perfect String")
+list:add("Beautiful String")
+
+print(list:size())
+
+-- Вывод:
+-- 2
+           </code>
+        </pre>
+    </h1>
+
+    <br>
+    <br>
+    <h1 class="functiontitle">addList</h1>
+    <br>
+    <h1 class="text">Добавляет все элементы из указанного списка в список</h1>
+    <br>
+    <h1 class="text">Параметры</h1>
+    <br>
+    <h1 class="text">list - Список с элементами</h1>
+    <br>
+    <h1 class=text>Пример использования:</h1>
+    <h1>
+        <pre>
+           <code class="lua" >
+stringsList = vox_list:new()
+
+stringsList:add("Perfect String")
+stringsList:add("Beautiful String")
+
+list = vox_list:new()
+
+list:addList(stringsList)
+
+list:print()
+
+-- Вывод:
+-- Size: 2
+-- Iterations: 1
+-- Perfect String
+-- Beautiful String
+           </code>
+        </pre>
+    </h1>
+
+    <br>
+    <br>
+    <h1 class="functiontitle">add</h1>
+    <br>
+    <h1 class="text">Добавляет элемент в список</h1>
+    <br>
+    <h1 class="text">Параметры</h1>
+    <br>
+    <h1 class="text">element - Элемент, который добавится в список</h1>
+    <br>
+    <h1 class=text>Пример использования:</h1>
+    <h1>
+        <pre>
+           <code class="lua" >
+list = vox_list:new()
+
+list:add("Perfect String")
+
+print(list:get(0))
+
+-- Вывод:
+-- Perfect String
+           </code>
+        </pre>
+    </h1>
+
+    <br>
+    <br>
+    <h1 class="functiontitle">set</h1>
+    <br>
+    <h1 class="text">Устанавливает на указанный индекс указанный элемент. Также если index больше чем размер списка, то список автоматически расширится до index</h1>
+    <br>
+    <h1 class="text">Параметры</h1>
+    <br>
+    <h1 class="text">element - Элемент, который добавится в список</h1>
+    <h1 class="text">index - Позиция на которую вставится элемент</h1>
+    <br>
+    <h1 class=text>Пример использования:</h1>
+    <h1>
+        <pre>
+           <code class="lua" >
+list = vox_list:new()
+
+print(list:size())
+
+list:set("Perfect String", 4)
+
+print(list:size())
+print(list:get(4))
+
+-- Вывод:
+-- 0
+-- 4
+-- Perfect String
+           </code>
+        </pre>
+    </h1>
+
+    <br>
+    <br>
+    <h1 class="functiontitle">get</h1>
+    <br>
+    <h1 class="text">Возвращает элемент с определённой позиции</h1>
+    <br>
+    <h1 class="text">Параметры</h1>
+    <br>
+    <h1 class="text">index - Позиция с которой нужно получить элемент</h1>
+    <br>
+    <h1 class=text>Пример использования:</h1>
+    <h1>
+        <pre>
+           <code class="lua" >
+list = vox_list:fromElement("Perfect String")
+
+print(list:get(0))
+
+-- Вывод:
+-- Perfect String
+           </code>
+        </pre>
+    </h1>
+
+    <br>
+    <br>
+    <h1 class="functiontitle">clone</h1>
+    <br>
+    <h1 class="text">Клонирует список</h1>
+    <br>
+    <h1 class=text>Пример использования:</h1>
+    <h1>
+        <pre>
+           <code class="lua" >
+list = vox_list:new()
+
+list:add("Perfect String")
+list:add("Beautiful String")
+
+listClone = list:clone()
+
+print(listClone:size())
+print(listClone:get(0))
+print(listClone:get(1))
+
+-- Вывод:
+-- 2
+-- Perfect String
+-- Beautiful String
+           </code>
+        </pre>
+    </h1>
+
+    <br>
+    <br>
+    <h1 class="functiontitle">contains</h1>
+    <br>
+    <h1 class="text">Возвращает true, если указанный элемент содержится в списке</h1>
+    <br>
+    <h1 class="text">Параметры</h1>
+    <br>
+    <h1 class="text">element - Элемент, который нужно проверить на существование в списке</h1>
+    <br>
+    <h1 class=text>Пример использования:</h1>
+    <h1>
+        <pre>
+           <code class="lua" >
+list = vox_list:new()
+
+list:add("Perfect String")
+
+print(list:contains("Perfect String"))
+print(list:contains("Beautiful String"))
+
+-- Вывод:
+-- true
+-- false
+           </code>
+        </pre>
+    </h1>
+
+    <br>
+    <br>
+    <h1 class="functiontitle">indexOf</h1>
+    <br>
+    <h1 class="text">Возвращает позицию элемента в списке, возвращает -1 если элемента нет в списке</h1>
+    <br>
+    <h1 class="text">Параметры</h1>
+    <br>
+    <h1 class="text">element - Элемент, позицию которого нужно получить</h1>
+    <br>
+    <h1 class=text>Пример использования:</h1>
+    <h1>
+        <pre>
+           <code class="lua" >
+list = vox_list:new()
+
+list:add("Beautiful String")
+
+print(list:indexOf("Perfect String"))
+print(list:indexOf("Beautiful String"))
+
+-- Вывод:
+-- -1
+-- 0
+           </code>
+        </pre>
+    </h1>
+
+    <br>
+    <br>
+    <h1 class="functiontitle">remove</h1>
+    <br>
+    <h1 class="text">Удаляет указанный элемент из списка. Если удаление произведено успешно возвращает true, иначе false</h1>
+    <br>
+    <h1 class="text">Параметры</h1>
+    <br>
+    <h1 class="text">element - Элемент, который нужно удалить из списка</h1>
+    <br>
+    <h1 class=text>Пример использования:</h1>
+    <h1>
+        <pre>
+           <code class="lua" >
+list = vox_list:new()
+
+list:add("Perfect String")
+
+print(list:indexOf("Perfect String"))
+
+list:remove("Perfect String")
+
+print(list:indexOf("Perfect String"))
+
+-- Вывод:
+-- 0
+-- -1
+           </code>
+        </pre>
+    </h1>
+
+    <br>
+    <br>
+    <h1 class="functiontitle">removeAt</h1>
+    <br>
+    <h1 class="text">Удаляет элемент на указанной позиции. Если удаление произведено успешно возвращает true, иначе false</h1>
+    <br>
+    <h1 class="text">Параметры</h1>
+    <br>
+    <h1 class="text">index - Позиция элемента, который нужно удалить</h1>
+    <br>
+    <h1 class=text>Пример использования:</h1>
+    <h1>
+        <pre>
+           <code class="lua" >
+list = vox_list:new()
+
+list:add("Perfect String")
+
+print(list:indexOf("Perfect String"))
+
+list:removeAt(0)
+
+print(list:indexOf("Perfect String"))
+
+-- Вывод:
+-- 0
+-- -1
+           </code>
+        </pre>
+    </h1>
+
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <a href="../api.html" class="button">Назад</a>
+   <script src = "../../../files/highlight/highlight.js" />
+   <script src="../../../files/highlight/languages/lua.js"></script>
+   <script>hljs.highlightAll();</script>
+</body>
+
+   
+</html>
